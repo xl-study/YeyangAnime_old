@@ -1,0 +1,18 @@
+@import '/src/styles/theme.scss';
+
+@mixin flex-vertical-center($justify-content: center, $flex-direction: row) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: center;
+}
+
+@mixin bg_color($color) {
+  background-color: map-get($light, $color);
+
+  @each $theme in $themeList {
+    [data-theme='#{map-get($theme, $color)}'] & {
+      background-color: map-get($theme, $color);
+    }
+  }
+}

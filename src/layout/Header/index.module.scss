@@ -1,0 +1,17 @@
+@import '/src/styles/mixins.scss';
+@import '/src/styles/theme.scss';
+
+.hidden {
+  transform: translate(0, -($navHeight));
+}
+
+.navWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  @include flex-vertical-center(space-between);
+  padding: 0 40px;
+  height: $navHeight;
+  @include bg_color('nav_bgc')
+}
